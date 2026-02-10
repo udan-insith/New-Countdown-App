@@ -26,7 +26,7 @@ const giveaway = document.querySelector('.giveaway')
 const deadline = document.querySelector('.deadline')
 const items = document.querySelector('.deadline-format h4')
 
-let futureDate = new Date(2026, 1, 25, 17, 19, 0)
+let futureDate = new Date(2026, 2, 29, 17, 19, 0)
 console.log(futureDate)
 
 const year = futureDate.getFullYear()
@@ -34,6 +34,10 @@ const hours = futureDate.getHours()
 const minutes = futureDate.getMinutes()
 
 let month = futureDate.getMonth()
-console.log(month)
+month = months[month]
+const date = futureDate.getDate()
 
-giveaway.textContent = `giveaway ends on ${year} ${hours}:${minutes}am`
+const weekday = futureDate.getDay()
+console.log(weekday)
+
+giveaway.textContent = `giveaway ends on ${month} ${year} ${hours}:${minutes}am`
